@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 export default class App extends Component {
   constructor() {
@@ -23,7 +24,7 @@ export default class App extends Component {
   render() {
     const { email, saveEmail } = this.state;
     return (
-      <div>
+      <div className="App">
         <label htmlFor="id-input">
           Email
           <input
@@ -32,7 +33,9 @@ export default class App extends Component {
         </label>
         <button
           type="button" value="Enviar"
-          onClick={() => this.changeSalvarEmail(email)}>
+          data-testid="id-send"
+          onClick={() => this.changeSalvarEmail(email)}
+        >
             Enviar
           </button>
         <button
@@ -40,7 +43,7 @@ export default class App extends Component {
         >
           Voltar
         </button>
-        <h2 data-testid="-id-email-user">{`Valor: ${saveEmail}`}</h2>
+        <h2 data-testid="id-email-user">{`Valor: ${saveEmail}`}</h2>
       </div>
     )
   };
