@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ValidEmail from './ValidEmail';
 
 export default class App extends Component {
   constructor() {
@@ -43,7 +44,8 @@ export default class App extends Component {
         >
           Voltar
         </button>
-        <h2 data-testid="id-email-user">{`Valor: ${saveEmail}`}</h2>
+        {/* <h2 data-testid="id-email-user">{`Valor: ${saveEmail}`}</h2> */}
+        <ValidEmail email={ saveEmail } />
       </div>
     )
   };
